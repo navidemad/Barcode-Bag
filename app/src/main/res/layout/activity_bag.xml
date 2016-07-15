@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BagActivity">
+
+    <LinearLayout
+        android:id="@+id/btn_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_my_bag"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/my_bag"
+            />
+
+        <Button
+            android:id="@+id/btn_add_a_card"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/add_a_card"
+            android:background="@color/colorBackgroundButtonBlue"
+            />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listview_bag_cards"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/btn_group"
+        android:background="@color/colorBackgroundListview"
+        />
+
+</RelativeLayout>
