@@ -1,41 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".BagActivity">
-
-    <LinearLayout
-        android:id="@+id/btn_group"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btn_my_bag"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/my_bag"
-            />
-
-        <Button
-            android:id="@+id/btn_add_a_card"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/add_a_card"
-            android:background="@color/colorBackgroundButtonBlue"
-            />
-
-    </LinearLayout>
-
-    <ListView
-        android:id="@+id/listview_bag_cards"
+<layout>
+    <data>
+        <variable name="adapter" type="net.navidemad.barcodebag.adapters.CardsRecyclerAdapter" />
+        <variable name="layoutManager" type="android.support.v7.widget.RecyclerView.LayoutManager" />
+    </data>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/btn_group"
-        android:background="@color/colorBackgroundListview"
-        />
+        tools:context=".activities.BagActivity">
 
-</RelativeLayout>
+        <LinearLayout
+            android:id="@+id/btn_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_my_bag"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@{String.format(@string/my_bag, Card.count(Card.class))}"
+                />
+
+            <Button
+                android:id="@+id/btn_add_a_card"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/add_a_card"
+                android:background="@color/colorBackgroundButtonBlue"
+                />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_bag_cards"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/btn_group"
+            android:background="@color/colorBackgroundListview"
+            adapter="@{cardsRecyclerAdapter}"
+            layoutManager="@{layoutManager}"
+            />
+
+    </RelativeLayout>
+</layout>

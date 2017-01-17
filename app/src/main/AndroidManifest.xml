@@ -14,7 +14,7 @@
             android:value="database.db" />
         <meta-data
             android:name="VERSION"
-            android:value="2" />
+            android:value="3" />
         <meta-data
             android:name="QUERY_LOG"
             android:value="true" />
@@ -22,14 +22,14 @@
             android:name="DOMAIN_PACKAGE_NAME"
             android:value="net.navidemad.barcodebag" />
 
-        <activity android:name=".BagActivity">
+        <activity android:name=".activities.BagActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddBagActivity"></activity>
+        <activity android:name=".activities.AddBagActivity"></activity>
     </application>
 
 </manifest>

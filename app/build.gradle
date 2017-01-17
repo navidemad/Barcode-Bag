@@ -1,4 +1,18 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.3'
+    }
+}
+
 apply plugin: 'com.android.application'
+
+repositories {
+    jcenter()
+}
 
 android {
     compileSdkVersion 25
@@ -26,4 +40,6 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.android.support:recyclerview-v7:25.1.0'
+    compile 'com.github.satyan:sugar:1.5'
 }
