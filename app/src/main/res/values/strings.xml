@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Barcode Bag</string>
 
-    <string name="my_bag">My bag ($d)</string>
+    <string name="my_bag">My bag (%1$d)</string>
     <string name="add_a_card">Add a card</string>
+    <string name="save">Save the card</string>
+    <string name="delete">Delete this card</string>
+    <string name="card_title">Card title</string>
 </resources>
